@@ -1,0 +1,170 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="18ozsRNii1kR936NDua0">
+    <mxGraphModel dx="815" dy="444" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="V_9_dKlySxO0paZ783or-26" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalLabelPosition=middle;aspect=fixed;verticalAlign=top;fillColor=strokeColor;align=right;outlineConnect=0;shape=mxgraph.fluid_power.x10540;points=[[0.35,0,0],[0.35,1,0]];rotation=-90;flipV=1;labelPosition=left;textDirection=vertical-rl;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="53" width="79.18" height="75.54" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.35;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;" edge="1" parent="1" target="V_9_dKlySxO0paZ783or-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80.02857142857135" y="123" as="sourcePoint" />
+            <mxPoint x="130" y="105" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="80" y="103" />
+              <mxPoint x="121" y="103" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-31" value="&lt;font&gt;Pressure Regulator&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="140" y="128.54000000000002" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-35" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;fillColor=strokeColor;align=center;outlineConnect=0;shape=mxgraph.fluid_power.x11820;points=[[0.5,1,0]]" vertex="1" parent="1">
+          <mxGeometry x="210" y="62" width="27" height="40.56" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-37" value="&lt;font&gt;Pressure Source&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="135" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-38" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;fillColor=strokeColor;align=center;outlineConnect=0;shape=mxgraph.fluid_power.x10890;points=[[0.667,0,0],[0.667,1,0]];rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="247.8" y="50" width="112.4" height="67.26" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.35;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.667;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;" edge="1" parent="1" source="V_9_dKlySxO0paZ783or-26" target="V_9_dKlySxO0paZ783or-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-43" value="&lt;font&gt;Proportional Valve&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="250" y="135" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-48" value="" style="group;flipH=1;flipV=0;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="370" y="123" width="30" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-3" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="24.999999999999993" y="60" as="sourcePoint" />
+            <mxPoint x="24.999999999999993" y="15.000000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-4" value="" style="endArrow=none;html=1;rounded=0;entryX=0.159;entryY=0.977;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48" target="V_9_dKlySxO0paZ783or-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="5.0000000000000036" y="60" as="sourcePoint" />
+            <mxPoint x="15.500000000000004" y="9.999999999999993" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="30" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-14" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="20.000000000000004" y="50" as="sourcePoint" />
+            <mxPoint x="20.039999999999996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-18" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10.000000000000002" y="20" as="sourcePoint" />
+            <mxPoint x="10.000000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-5" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="20.000000000000004" y="70" as="sourcePoint" />
+            <mxPoint x="24.999999999999993" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-7" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="20.000000000000004" y="70" as="sourcePoint" />
+            <mxPoint x="10.000000000000002" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-6" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10.000000000000002" y="70" as="sourcePoint" />
+            <mxPoint x="5.0000000000000036" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.667;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.333;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;" edge="1" parent="1" source="V_9_dKlySxO0paZ783or-38" target="V_9_dKlySxO0paZ783or-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-52" value="Fluid Reservoir" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="335" y="193" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-55" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="123" as="sourcePoint" />
+            <mxPoint x="450" y="102.25999999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="390" y="103" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-56" value="" style="verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.flow_nozzle;" vertex="1" parent="1">
+          <mxGeometry x="450" y="86.51999999999998" width="60" height="30.74" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-57" value="&lt;font&gt;Flow Rate Sensor&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="123" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-65" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="662" y="81" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-58" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="V_9_dKlySxO0paZ783or-65">
+          <mxGeometry width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-60" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="61.53846153846153" y="20.327868852459016" as="sourcePoint" />
+            <mxPoint x="18.46153846153846" y="20.327868852459016" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-61" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="61.53846153846153" y="20.327868852459016" as="sourcePoint" />
+            <mxPoint x="80" y="7.21311475409836" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-62" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="61.53846153846153" y="20.327868852459016" as="sourcePoint" />
+            <mxPoint x="80" y="33.442622950819676" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-63" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="V_9_dKlySxO0paZ783or-65" source="V_9_dKlySxO0paZ783or-58">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-12.307692307692308" y="53.11475409836065" as="sourcePoint" />
+            <mxPoint x="18.46153846153846" y="20.327868852459016" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-64" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="V_9_dKlySxO0paZ783or-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="33.442622950819676" as="sourcePoint" />
+            <mxPoint x="18.46153846153846" y="20.327868852459016" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-67" value="&lt;font&gt;Microfluidic Chip&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="652" y="121" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.47;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="V_9_dKlySxO0paZ783or-68" target="V_9_dKlySxO0paZ783or-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="101.40000000000003" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="651" y="101" />
+              <mxPoint x="651" y="101" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-68" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;fillColor=strokeColor;align=center;outlineConnect=0;shape=mxgraph.fluid_power.x10500;points=[[0.47,0,0],[0.47,1,0]];rotation=-90;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="538" y="59" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.47;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="V_9_dKlySxO0paZ783or-56" target="V_9_dKlySxO0paZ783or-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-73" value="&lt;font&gt;Emergency Relief Valve&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="539" y="140" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V_9_dKlySxO0paZ783or-74" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="71.25" y="117.25999999999999" width="17.5" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
