@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.2">
   <diagram name="Page-1" id="NDtuK70zwKNLPu21tIqn">
-    <mxGraphModel dx="946" dy="525" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+    <mxGraphModel dx="1351" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -221,6 +221,30 @@
         </mxCell>
         <mxCell id="6aBj0-lE_QLN0aVypB25-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="INA118P Instrumentation Amplifier (E.8)" vertex="1">
           <mxGeometry height="60" width="100" x="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-18" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="160" x="360" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-7" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;u&gt;Tubing&lt;/u&gt;&lt;div&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/div&gt;&lt;div style=&quot;text-align: right;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Power Supply&lt;/div&gt;&lt;div style=&quot;text-align: right;&quot;&gt;Microcontroller&lt;/div&gt;&lt;div style=&quot;text-align: right;&quot;&gt;Sensors&lt;/div&gt;&lt;div style=&quot;text-align: right;&quot;&gt;Actuators&lt;/div&gt;&lt;div style=&quot;text-align: right;&quot;&gt;Output&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="160" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-8" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#f5f5f5;fontColor=#333333;" value="" vertex="1">
+          <mxGeometry height="8" width="26" x="14" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-9" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#dae8fc;" value="" vertex="1">
+          <mxGeometry height="8" width="26" x="14" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-10" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#dae8fc;" value="" vertex="1">
+          <mxGeometry height="8" width="26" x="14" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-13" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#fff2cc;" value="" vertex="1">
+          <mxGeometry height="8" width="26" x="14" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-15" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#ffe6cc;" value="" vertex="1">
+          <mxGeometry height="8" width="26" x="14" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="6aBj0-lE_QLN0aVypB25-17" parent="6aBj0-lE_QLN0aVypB25-18" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#d5e8d4;" value="" vertex="1">
+          <mxGeometry height="8" width="26" x="14" y="98" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
