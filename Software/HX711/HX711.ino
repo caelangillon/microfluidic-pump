@@ -6,7 +6,6 @@ const int CLK_PIN = 8;
 float known_pressure = 100000;
 
 float CF; // Calibration factor
-int no = 10; // Number of ADC readings per poll
 
 bool flag1 = true;
 
@@ -15,6 +14,7 @@ HX711 psens;
 void setup() {
 
   // Arduino setup
+  pinMode(10, OUTPUT);
   pinMode(11, OUTPUT);
   Serial.begin(115200);
   psens.begin(DT_PIN, CLK_PIN);
@@ -24,8 +24,8 @@ void setup() {
   }
 
   while (!psens.is_ready()) {
-    Serial.println("HX711 not found.");
     delay(250);
+    Serial.println("HX711 not found.");
   }
 
   // Serial info
@@ -57,14 +57,15 @@ void setup() {
     }
   }
 
-  long reading = psens.get_units(10);
+  float reading = psens.get_units(10);
   Serial.print("Raw reading: ");
   Serial.println(reading);
 
   Serial.println("Pressure read succesful. Calibrating...");
   delay(100);
 
-  CF = reading / known_pressure ; 
+  CF = 36.93;
+  // CF = reading / known_pressure ; 
   psens.set_scale(CF);
   Serial.println("Calibration factor: ");
   Serial.print(CF);
@@ -72,7 +73,7 @@ void setup() {
 
 void loop() {
   // Acquire pressure sensor measurements
-  float pressure_measurement = psens.get_units(1);
+  float pressure_measurement = psens.read();
   // Print measurement & info
   Serial.println(pressure_measurement);
 }
