@@ -3859,6 +3859,16 @@
 		)
 		(uuid "a292867e-d4b9-4b97-afa6-40940c194097")
 	)
+	(text "(Equiv. R = 68)"
+		(exclude_from_sim no)
+		(at 150.876 140.208 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b3926131-4a6d-4505-a345-63b9572864ed")
+	)
 	(text "Pressure Sensor"
 		(exclude_from_sim no)
 		(at 25.4 107.442 0)
@@ -3868,6 +3878,16 @@
 			)
 		)
 		(uuid "e02199f5-125f-468c-8223-8e9c922e30cf")
+	)
+	(text "(Equiv. R = 68)"
+		(exclude_from_sim no)
+		(at 248.666 140.208 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "edd9f0bd-7222-41d4-8528-d983d5419290")
 	)
 	(junction
 		(at 38.1 27.94)
@@ -6743,7 +6763,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "R2"
+		(property "Value" "73"
 			(at 195.58 132.0799 0)
 			(effects
 				(font
@@ -6883,7 +6903,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "R1"
+		(property "Value" "4990"
 			(at 97.282 119.38 0)
 			(effects
 				(font
@@ -7500,7 +7520,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "R1"
+		(property "Value" "4990"
 			(at 195.072 119.38 0)
 			(effects
 				(font
@@ -7865,7 +7885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "R2"
+		(property "Value" "73"
 			(at 97.79 132.0799 0)
 			(effects
 				(font
