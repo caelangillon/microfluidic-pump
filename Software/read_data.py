@@ -5,9 +5,8 @@ from matplotlib.ticker import MaxNLocator
 data_matrix = np.loadtxt("frs_calib_test4.csv")
 
 # test 1: duration 1025.5775558948517 length 12983
-# test 2 (broken, do not report): duration 650.5070729255676 length 7982
-# test 3: duration 969.6334116458893 length 12267
-# test 4: duration 972.1644570827484 length 12299
+# test 2: duration 969.6334116458893 length 12267
+# test 3: duration 972.1644570827484 length 12299
 duration = 972.1644570827484
 length = 12299
 
