@@ -6,7 +6,7 @@ const float T = 273.7;
 const float p_atm = 101500; //bar
 const float p_hydro = 0;
 
-const float r = 7;
+const float r = 7; // is this the gas constant? or the resistance?
 const float r_c = 5;
 const float r_rout = 5;
 
@@ -84,6 +84,17 @@ float v_integral(float q_out, float dt) {
   return v_out;
 }
 
+// AFFECTIVE AREA AND DRIVER CURRENT FUNCTION //
+float valve_profile(float mdot_target, float p, float p_in, float p_out) {
+  if (mdot_target > 0) {
+    float G3 = (sqrt(7) * mdot_target * sqrt(r * T)) / (7 * p * sqrt((p/p_in)^(10/7) - (p/p_in)^(12/7)));
+    // to be continued
+  } else {
+    float G4 = (sqrt(7) * mdot_target * sqrt(r * T)) / (7 * p_out * sqrt((p_out/p)^(10/7) - (p_out/p)^(12/7)));
+    // to be continued
+  }
+}
+
 // SENSOR MEASUREMENT //
 float frs() {
   float q_out = 3;
@@ -122,6 +133,11 @@ void loop() {
   // Determine mass flow rate target
   float v_out = v_integral(q_out, dt);
   float G2 = (pdot_target * (v_tot - v_l0 + v_out) + q_out * p) / (r * T);
+  float mdot_target = pdot_target * G2;
 
-  // to be continued
+  // Determine the affective area and required driver current
+  float p_pin = 0.5; //what is this?
+  float p_out = 0.5; //what is this?
+
+  float current = valve_profile(mdot_target, p, p_pin, p_out);
 }
