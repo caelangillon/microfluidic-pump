@@ -97,12 +97,12 @@ float valve_profile(float mdot_target, float p, float p_in, float p_out) {
 
 // SENSOR MEASUREMENT //
 float frs() {
-  float q_out = 3;
+  float q_out = 3; // to be finished still
   return q_out;
 }
 
 float prs() {
-  float p = 3;
+  float p = 3; // to be finished still
   return p;
 }
 
@@ -118,8 +118,8 @@ void loop() {
   prevTime = now;
 
   // Read sensors
-  float q_out = frs();  // to be finished still
-  float p = prs();      // to be finished still
+  float q_out = frs();
+  float p = prs();
 
   // Determine target pressure
   float G1 = p_atm - p_hydro + q_out * (r_c + r_rout);
