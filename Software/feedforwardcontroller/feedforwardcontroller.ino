@@ -47,6 +47,65 @@ struct PID2 {
   float out;
 } pid2;
 
+//
+//
+//
+//  SETUP
+//
+//
+//
+
+void setup() {
+// Nothing added here yet
+}
+
+//
+//
+//
+//  LOOP
+//
+//
+//
+
+void loop() {
+  // Determine dt for controller
+  unsigned long now = millis();
+  float dt = (now - prevTime) / 1000.0;
+  prevTime = now;
+
+  // Read sensors
+  float q_out = frs();
+  float p = prs();
+
+  // Determine target pressure
+  float G1 = p_atm - p_hydro + q_out * (r_c + r_rout);
+  float feedforward = G1 * q_target;
+
+  float p_target = PID_1(q_target, q_out, dt) + feedforward;
+
+  // Determine rate of change of target pressure
+  float pdot_target = PID_2(p_target, p, dt);
+
+  // Determine mass flow rate target
+  float v_out = v_integral(q_out, dt);
+  float G2 = (pdot_target * (v_tot - v_l0 + v_out) + q_out * p) / (r * T);
+  float mdot_target = pdot_target * G2;
+
+  // Determine the affective area and required driver current
+  float p_pin = 0.5; //what is this?
+  float p_out = 0.5; //what is this?
+
+  float current = valve_profile(mdot_target, p, p_pin, p_out);
+}
+
+//
+//
+//
+//  EXTRA FUNCTIONS
+//
+//
+//
+
 // PID CONTROLLERS //
 float PID_1(float q_target, float q_out, float dt) {
   pid1.error = q_target - q_out;
@@ -87,10 +146,10 @@ float v_integral(float q_out, float dt) {
 // AFFECTIVE AREA AND DRIVER CURRENT FUNCTION //
 float valve_profile(float mdot_target, float p, float p_in, float p_out) {
   if (mdot_target > 0) {
-    float G3 = (sqrt(7) * mdot_target * sqrt(r * T)) / (7 * p * sqrt((p/p_in)^(10/7) - (p/p_in)^(12/7)));
+    float G3 = (sqrt(7) * mdot_target * sqrt(r * T)) / (7 * p * sqrt(pow((p/p_in), 10/7) - pow((p/p_in), 12/7)));
     // to be continued
   } else {
-    float G4 = (sqrt(7) * mdot_target * sqrt(r * T)) / (7 * p_out * sqrt((p_out/p)^(10/7) - (p_out/p)^(12/7)));
+    float G4 = (sqrt(7) * mdot_target * sqrt(r * T)) / (7 * p_out * sqrt(pow((p_out/p), 10/7) - pow((p_out/p, 12/7))));
     // to be continued
   }
 }
@@ -104,40 +163,4 @@ float frs() {
 float prs() {
   float p = 3; // to be finished still
   return p;
-}
-
-// CONTROLLER EXECUTION //
-void setup() {
-// Nothing added here yet
-}
-
-void loop() {
-  // Determine dt for controller
-  unsigned long now = millis();
-  float dt = (now - prevTime) / 1000.0;
-  prevTime = now;
-
-  // Read sensors
-  float q_out = frs();
-  float p = prs();
-
-  // Determine target pressure
-  float G1 = p_atm - p_hydro + q_out * (r_c + r_rout);
-  float feedforward = G1 * q_target;
-
-  float p_target = PID_1(q_target, q_out, dt) + feedforward;
-
-  // Determine rate of change of target pressure
-  float pdot_target = PID_2(p_target, p, dt);
-
-  // Determine mass flow rate target
-  float v_out = v_integral(q_out, dt);
-  float G2 = (pdot_target * (v_tot - v_l0 + v_out) + q_out * p) / (r * T);
-  float mdot_target = pdot_target * G2;
-
-  // Determine the affective area and required driver current
-  float p_pin = 0.5; //what is this?
-  float p_out = 0.5; //what is this?
-
-  float current = valve_profile(mdot_target, p, p_pin, p_out);
 }

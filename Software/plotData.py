@@ -10,9 +10,9 @@ data_matrix = np.loadtxt("frs_calib_test3.csv")
 duration = 972.1644570827484
 length = 12299
 
-for i in range(len(data_matrix)):
-    if data_matrix[i] >= 200:
-        data_matrix[i] = 0
+#for i in range(len(data_matrix)):
+ #   if data_matrix[i] >= 200:
+#        data_matrix[i] = 0
 
 xdiv = duration / 50
 x = np.linspace(0, duration, length)
