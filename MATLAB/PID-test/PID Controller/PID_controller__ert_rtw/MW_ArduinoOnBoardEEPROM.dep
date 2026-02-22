@@ -1,0 +1,14 @@
+MW_ArduinoOnBoardEEPROM.o: \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_ArduinoOnBoardEEPROM.cpp \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_ArduinoOnBoardEEPROM.h \
+ C:/Users/yoela/ONEDRI~2/YEAR5~1/GROUPP~1/Tests/PID-test/PID_controller__ert_rtw/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2025b/extern/include/tmwtypes.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/EEPROM/src/EEPROM.h
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_ArduinoOnBoardEEPROM.h:
+
+C:/Users/yoela/ONEDRI~2/YEAR5~1/GROUPP~1/Tests/PID-test/PID_controller__ert_rtw/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2025b/extern/include/tmwtypes.h:
+
+C:/ProgramData/MATLAB/SupportPackages/R2025b/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/EEPROM/src/EEPROM.h:
