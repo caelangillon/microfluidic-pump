@@ -1,0 +1,38 @@
+HX711.o: \
+ C:/Users/yoela/ONEDRI~2/YEAR5~1/GROUPP~1/CUSTOM~1/PRESSU~1/DEPEND~1/HX711.cpp \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/WString.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Stream.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Print.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Printable.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/standard/pins_arduino.h \
+ C:/Users/yoela/ONEDRI~2/YEAR5~1/GROUPP~1/CUSTOM~1/PRESSU~1/DEPEND~1/HX711.h
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/WString.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Stream.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Print.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Printable.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+C:\ProgramData\MATLAB\SupportPackages\R2025b\aCLI\data\packages\arduino/hardware/avr/1.8.3/variants/standard/pins_arduino.h:
+
+C:/Users/yoela/ONEDRI~2/YEAR5~1/GROUPP~1/CUSTOM~1/PRESSU~1/DEPEND~1/HX711.h:
