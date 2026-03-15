@@ -30,32 +30,33 @@ void setup() {
 void loop() {
 
   // Read UI inputs
-  if (readFromUI()) {  // check if control parameters or PID gains have been changed
+  if (readFromUI()) {  // check if control parameters or PID gains have been changed from UI and update ctrl_params and pid_gains accordingly
+
     // Update control targets
     if (ctrl_params.selection == 0) {
       turnOffSystem(); // to be implemented: depressurizes then closes valves and stops any control actions when UI is closed
     }
-    else if (ctrl_params.selection == 1) {
-      setPressureTarget(ctrl_params); // to be implemented: sets pressure target from parameters based on UI inputs
-    }
-    else if (ctrl_params.selection == 2) {
-      setFlowRateTarget(ctrl_params); // to be implemented: sets flow rate target from parameters based on UI inputs
+    else if (ctrl_params.selection == 1 or ctrl_params.selection == 2) {
+      resetTargets(); // resets timer for stepped/sinusoidal control
     }
   }
   
+
+
   // Update system states from sensors and timer
   system_state.clock = millis() / 1000.0; // In seconds
   updatePressure(); // reads from sensor and updates system_state.P
   updateFlowRate(); // reads from sensor and updates system_state.Q
 
+
+
   // Controllers
+  updateTarget();         // updates target flowrate or pressure based on control selection, type and parameters (e.g. stepped, sinusoidal, etc.)
   if (ctrl_params.selection == 2) {
-      controlFlowRate(); // to be implemented: calculates target pressure and updates system_state.P_target
-      controlPressure(); // to be implemented: calculates valve DCs updates system_state.DC1 and system_state.DC2
+    controlFlowRate();    // to be implemented: calculates target pressure and updates system_state.P_target
   }
-  else if (ctrl_params.selection == 1) {
-      controlPressure(); // to be implemented: calculates valve DCs updates system_state.DC1 and system_state.DC2
-  }
+  controlPressure();      // to be implemented: calculates valve DCs updates system_state.DC1 and system_state.DC2
+
 
   // Set valve duty cycles based on controller outputs
   updatePropValves(); // to be implemented: sets PWM duty cycles based on system_state.DC1 and system_state.DC2
