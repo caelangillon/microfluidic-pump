@@ -1,6 +1,6 @@
-#include "Controller.h"
+#include "controllers.h"
 #include <Arduino.h>
-#include "SharedData.h"
+#include "sharedData.h"
 
 // Currently, the PID outputs are just floats, but maybe we can make it double or long or anything else that might be more accurate? Could be worth trying
 

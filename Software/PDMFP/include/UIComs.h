@@ -2,7 +2,7 @@
 #define UIComs_H
 
 #include <Arduino.h>
-#include "SharedData.h"
+#include "sharedData.h"
 
 bool readFromUI();
 bool sendToUI();

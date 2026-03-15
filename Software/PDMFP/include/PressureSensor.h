@@ -2,7 +2,7 @@
 #define PRESSURE_SENSOR_H
 
 #include <Arduino.h>
-#include "SharedData.h"
+#include "sharedData.h"
 
 // Function declarations for pressure sensor operations
 bool setupPressureSensor();

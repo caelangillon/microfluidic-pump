@@ -2,7 +2,7 @@
 #define FLOW_RATE_SENSOR_H
 
 #include <Arduino.h>
-#include "SharedData.h"
+#include "sharedData.h"
 
 // Function declarations for flow rate sensor operations
 bool setupFlowRateSensor();

@@ -1,4 +1,4 @@
-#include "PressureSensor.h"
+#include "pressureSensor.h"
 #include <HX711.h>
 // Arduino.h isn't included here, why?
 

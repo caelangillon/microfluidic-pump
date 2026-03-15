@@ -1,4 +1,4 @@
-#include "FlowRateSensor.h"
+#include "flowRateSensor.h"
 #include <Arduino.h>
 #include <Wire.h> // Arduino library for I2C
 
