@@ -17,8 +17,7 @@ controllerState controller_state;
 void setup() {
 
   // Setup serial communication
-  Serial.begin(9600); // i think i remember seeing that 9600 is req. in a datasheet somewhere but could be wrong. ensure this aligns with platformio.ini
-  //Serial.setTimeout(100); // Set timeout for serial read operations to 100ms
+  Serial.begin(9600);
 
   // Setup sensors
   setupPressureSensor();
