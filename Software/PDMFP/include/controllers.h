@@ -1,12 +1,10 @@
-#ifndef CONTROLLER_H
-#define CONTROLLER_H
+#ifndef CONTROLLERS_H
+#define CONTROLLERS_H
 
 #include <Arduino.h>
 #include "sharedData.h"
 
-float PID_V1(float V1_setpoint, float V1_measured);
-float PID_V2(float V2_setpoint, float V2_measured);
-float PID_FR(float FR_setpoint, float FR_measured);
-void resetControllers();
+void controlFlowRate();    // calculates target pressure and updates system_state.P_target
+void controlPressure();    // calculates valve DCs updates system_state.DC1 and system_state.DC2
 
-#endif // CONTROLLER_H
+#endif // CONTROLLERS_H

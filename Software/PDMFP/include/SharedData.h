@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-struct ControlParams {
+struct controlParams {
   uint8_t selection = 0;    // 0: off  1: pressure control  2: flow rate control
   uint8_t type = 0;         // 0: off  1: constant  2: stepped  3: sinusoidal  4: Pulsed
 
@@ -31,7 +31,7 @@ struct ControlParams {
 
 };
 
-struct PidGains {
+struct pidGains {
   // Flow rate PID gains
   float P_FR = 0;
   float I_FR = 0;
@@ -46,7 +46,7 @@ struct PidGains {
   float D_V2 = 0;
 };
 
-struct SystemState {
+struct systemState {
   float clock = 0;      // time in seconds since system start
   float Q = 0;          // flow rate
   float Q_target = 0;   // flow rate target
@@ -57,8 +57,17 @@ struct SystemState {
   float Vol = 7;        // volume fluid left in reservoir in mL, initialized to 7mL for testing purposes
 };
 
-extern ControlParams ctrl_params;
-extern PidGains pid_gains;
-extern SystemState system_state;
+struct controllerState {
+  float prevFlowErr = 0;  // previous flow rate error
+  float prevPressErr = 0; // previous pressure error
+  float prevTime = 0;     // previous time
+  float int_FR = 0;       // integral of flow rate error
+  float int_Press = 0;    // integral of pressure error 
+};
+
+extern controlParams ctrl_params;
+extern pidGains pid_gains;
+extern systemState system_state;
+extern controllerState controller_state;
 
 #endif // SHARED_DATA_H
