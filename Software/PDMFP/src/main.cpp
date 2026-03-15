@@ -5,7 +5,7 @@
 #include "SharedData.h"
 #include "LCD.h"
 #include "Controller.h"
-#include "propValve.h"
+#include "propValves.h"
 #include <HX711.h>
 
 ControlParams ctrl_params;

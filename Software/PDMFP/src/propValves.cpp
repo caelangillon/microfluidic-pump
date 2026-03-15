@@ -1,4 +1,4 @@
-#include "propValve.h"
+#include "propValves.h"
 #include <Arduino.h>
 
 // Define prop valve pins here
