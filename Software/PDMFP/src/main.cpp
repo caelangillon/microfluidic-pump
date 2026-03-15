@@ -2,8 +2,7 @@
 #include "sharedData.h"
 #include "UIComs.h"
 #include "LCD.h"
-#include "pressureSensor.h"
-#include "flowRateSensor.h"
+#include "sensors.h"
 #include "targetGenerator.h"
 #include "controllers.h"
 #include "propValves.h"
@@ -22,6 +21,9 @@ void setup() {
   // Setup sensors
   setupPressureSensor();
   // setupFlowRateSensor();
+
+  // Setup valves
+  setupValvePWMs();
 
   // // Setup LCD
   // setupLCD();
