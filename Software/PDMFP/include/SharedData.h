@@ -37,12 +37,12 @@ struct PidGains {
   float I_FR = 0;
   float D_FR = 0;
   // Valve 1 PID gains
-  float P_V1 = 0;
-  float I_V1 = 0;
+  float P_V1 = 0.0006;
+  float I_V1 = 0.0001;
   float D_V1 = 0;
   // Valve 2 PID gains
-  float P_V2 = 0;
-  float I_V2 = 0;
+  float P_V2 = 0.019;
+  float I_V2 = 0.05;
   float D_V2 = 0;
 };
 
