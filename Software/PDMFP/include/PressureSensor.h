@@ -8,4 +8,4 @@
 bool setupPressureSensor();
 bool updatePressure();
 
-#endif // PRESSURE_SENSOR_H
+#endif // PRESSURE_SENSOR_H can move to after include

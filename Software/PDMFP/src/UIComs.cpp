@@ -1,5 +1,5 @@
-#include <Arduino.h>
 #include "UIComs.h"
+#include <Arduino.h>
 
 bool readFromUI() {
   static uint8_t msgType = 0; // Static variable to store the message type across function calls
@@ -28,7 +28,6 @@ bool readFromUI() {
     readingParams = false;
     return true;
   }
-
   return false;
 }
 

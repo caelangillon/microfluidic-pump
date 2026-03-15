@@ -4,9 +4,6 @@
 
 const int ADDRESS = 0x40; // Standard address for Liquid Flow Sensors
 
-
-
-
 bool setupFlowRateSensor() {
   int ret;
 
@@ -23,8 +20,6 @@ bool setupFlowRateSensor() {
   delay(50); // wait long enough for chip reset to complete
   return true;
 }
-
-
 
 
 bool updateFlowRate() {
