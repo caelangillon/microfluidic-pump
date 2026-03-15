@@ -1,7 +1,7 @@
 #include "LCD.h"
 #include <Arduino.h>
 #include <LiquidCrystal_I2C.h>
-#include "SharedData.h"
+#include "sharedData.h"
 
 LiquidCrystal_I2C lcd(0x27, 16, 4);
 
@@ -17,7 +17,16 @@ void setupLCD() {
     return;
 }
 
-void updateLCD(float pressure, float flowRate, float pressure_target, float flowRate_target, float DC1, float DC2, float time) {
+void updateLCD() {
+
+    float pressure = system_state.P;
+    float flowRate = system_state.Q;
+    float pressure_target = system_state.P_target;
+    float flowRate_target = system_state.Q_target;
+    float DC1 = system_state.DC1;
+    float DC2 = system_state.DC2;
+    float time = system_state.clock;
+
     lcd.setCursor(0, 0);
     lcd.print("P: ");
     lcd.print(pressure, 1); // Print pressure with 1 decimal place
@@ -53,4 +62,5 @@ void updateLCD(float pressure, float flowRate, float pressure_target, float flow
     lcd.print(time, 2); // Print runtime with 2 decimal places
     lcd.print(" s");
     return;
+    
 }
