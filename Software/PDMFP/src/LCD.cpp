@@ -17,7 +17,16 @@ void setupLCD() {
     return;
 }
 
-void updateLCD(float pressure, float flowRate, float pressure_target, float flowRate_target, float DC1, float DC2, float time) {
+void updateLCD() {
+
+    pressure = system_state.P;
+    flowRate = system_state.Q;
+    pressure_target = system_state.P_target;
+    flowRate_target = system_state.Q_target;
+    DC1 = system_state.DC1;
+    DC2 = system_state.DC2;
+    time = system_state.clock;
+
     lcd.setCursor(0, 0);
     lcd.print("P: ");
     lcd.print(pressure, 1); // Print pressure with 1 decimal place
@@ -53,4 +62,5 @@ void updateLCD(float pressure, float flowRate, float pressure_target, float flow
     lcd.print(time, 2); // Print runtime with 2 decimal places
     lcd.print(" s");
     return;
+    
 }

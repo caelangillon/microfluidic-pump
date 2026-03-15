@@ -48,7 +48,7 @@ void loop() {
   updatePropValves(system_state.DC1, system_state.DC2);
 
   // LCD Screen
-  updateLCD(system_state.P, system_state.Q, system_state.P_target, system_state.Q_target, system_state.DC1, system_state.DC2, system_state.clock);
+  updateLCD();
 
   // send system state back to computer for monitoring
   sendToUI();
