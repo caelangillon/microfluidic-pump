@@ -1,12 +1,13 @@
 #include <Arduino.h>
+#include "sharedData.h"
 #include "UIComs.h"
-#include "PressureSensor.h"
-#include "FlowRateSensor.h"
-#include "SharedData.h"
 #include "LCD.h"
-#include "Controller.h"
+#include "pressureSensor.h"
+#include "flowRateSensor.h"
+#include "targetGenerator.h"
+#include "controllers.h"
 #include "propValves.h"
-#include <HX711.h>
+
 
 ControlParams ctrl_params;
 PidGains pid_gains;
