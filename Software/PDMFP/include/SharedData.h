@@ -22,8 +22,9 @@ struct controlParams {
 
   // __ Type 4 __
   // param_1 = frequency
-  // param_2 = duty cycle
-  // param_3 = amplitude
+  // param_2 = amplitude
+  // param_3 = duty cycle
+  
 
   float param_1 = 0;
   float param_2 = 0;
