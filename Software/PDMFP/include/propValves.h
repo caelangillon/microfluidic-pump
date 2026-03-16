@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 
-void updatePropValves(float DC1, float DC2);
+void setupValvePWMs();
+void updateValvePWMs();
 
 #endif // PROP_VALVE_H
