@@ -40,9 +40,16 @@ bool updatePressure() {
 const int ADDRESS = 0x40; // Standard address for Liquid Flow Sensors
 
 bool setupFlowRateSensor() {
+
+  unsigned int sensor_resolution = 13;
+
   int ret;
+  uint16_t adv_user_reg_original;
+  uint16_t adv_user_reg_new;
+  uint16_t resolution_mask;
 
   Wire.begin();       // join i2c bus (address optional for master)
+  Wire.setClock(100000); // set I2C clock speed to 100000 for 80hz
 
   do {
     // Soft reset the sensor
@@ -53,6 +60,45 @@ bool setupFlowRateSensor() {
   } while (ret != 0);
 
   delay(50); // wait long enough for chip reset to complete
+
+  
+  // Set resolution to 13bits
+  resolution_mask = 0xF1FF | ((sensor_resolution - 9) << 9);
+
+
+  // Change mode to read adv. user register
+  Wire.beginTransmission(ADDRESS);
+  Wire.write(0xE5);
+  ret = Wire.endTransmission();
+
+  if (ret != 0) {
+    return false;
+  } 
+  
+  else {
+    // Read the content of the adv user register
+    Wire.requestFrom(ADDRESS, 2);
+    if (Wire.available() < 2) {
+      return false;
+
+    } else {
+      adv_user_reg_original  = Wire.read() << 8;
+      adv_user_reg_original |= Wire.read();
+      adv_user_reg_new = (adv_user_reg_original | 0x0E00) & resolution_mask;
+
+      // Apply resolution changes:
+      // Change mode to write to adv. user register
+      Wire.beginTransmission(ADDRESS);
+      Wire.write(0xE4);                           // Send command
+      Wire.write((byte)(adv_user_reg_new >> 8));      // Send MSB
+      Wire.write((byte)(adv_user_reg_new & 0xFF));    // Send LSB
+      ret = Wire.endTransmission();
+      if (ret != 0) {
+        return false;
+      }
+    }
+  }
+
   return true;
 }
 
