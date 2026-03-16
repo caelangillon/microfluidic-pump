@@ -93,12 +93,3 @@ float PID(float error, float prevErr, float intErr, float P, float I, float D, f
 }
 
 
-
-
-
-// void resetControllers() {
-//     int_FR = 0; lastErr_FR = 0; lastTime_FR = 0;
-//     int_V1 = 0; lastErr_V1 = 0; lastTime_V1 = 0;
-//     int_V2 = 0; lastErr_V2 = 0; lastTime_V2 = 0;
-//     return;
-// }
