@@ -1,4 +1,5 @@
 #include "propValves.h"
+#include "sharedData.h"
 #include <Arduino.h>
 
 void setupValvePWMs() {
