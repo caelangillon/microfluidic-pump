@@ -2,6 +2,7 @@
 #define PROP_VALVE_H
 
 #include <Arduino.h>
+#include "sharedData.h"
 
 void setupValvePWMs();
 void updateValvePWMs();

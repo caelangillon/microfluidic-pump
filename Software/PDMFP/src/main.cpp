@@ -17,16 +17,16 @@ controllerState controller_state;
 void setup() {
 
   // Setup serial communication
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   // Setup sensors
   setupPressureSensor();
-  // setupFlowRateSensor();
+  setupFlowRateSensor();
 
   // Setup valves
   setupValvePWMs();
 
-  // // Setup LCD
+  // Setup LCD
   // setupLCD();
 }
 
@@ -51,10 +51,11 @@ void loop() {
   
 
 
+
   // Update system states from sensors and timer
   system_state.clock = millis() / 1000.0;       // Arduino run time
   updatePressure();                             // reads from sensor and updates system_state.P
-  // updateFlowRate();                          // reads from sensor and updates system_state.Q
+  updateFlowRate();                             // reads from sensor and updates system_state.Q
 
 
 
@@ -69,12 +70,6 @@ void loop() {
   // Set valve duty cycles
   updateValvePWMs();                            // sets PWM duty cycles based on system_state.DC1 and system_state.DC2
 
-
-
-  // while (!true) {
-  //   resetControllers();
-  // } // Optional controller reset function, could be triggered by UI?
- 
 
   // LCD Screen
   // updateLCD();                               // updates LCD display with current system state values (pressure, flow rate, targets, valve DCs, time)
