@@ -28,6 +28,22 @@ bool readFromUI() {
     readingParams = false;
     return true;
   }
+
+  // if message type is  0x03, read calculated resistance
+  else if (msgType == 0x03) {
+    // Check if bytes are available for reading calculated resistance
+    if (Serial.available() < (int)sizeof(controller_state.R)) return false;
+    Serial.readBytes((char*)&controller_state.R, sizeof(controller_state.R));
+    readingParams = false;
+    ctrl_params.selection = 0; // reset control selection to off
+    ctrl_params.type = 0; // reset control type to off
+    ctrl_params.param_1 = 0; // reset control parameters
+    ctrl_params.param_2 = 0;
+    ctrl_params.param_3 = 0;
+    return true;
+  }
+
+  
   return false;
 }
 

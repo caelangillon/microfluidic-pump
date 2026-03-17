@@ -4,14 +4,11 @@
 
 float PID(float error, float prevErr, float intErr, float P, float I, float D, float sat_min, float sat_max);
 
-const float R = 80;
-
-
 
 void controlFlowRate() {    // calculates target pressure and updates system_state.P_target
 
     // Feed forward part
-    float FF_val = system_state.P + R*system_state.Q_target - R*system_state.Q;
+    float FF_val = system_state.P + controller_state.R*system_state.Q_target - controller_state.R*system_state.Q;
 
     // PID part
     float P = pid_gains.P_FR;

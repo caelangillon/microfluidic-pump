@@ -59,6 +59,7 @@ struct systemState {
 };
 
 struct controllerState {
+  float R = 80;           // system resistance, initialized to 80 for testing purposes
   float prevFlowErr = 0;  // previous flow rate error
   float prevPressErr = 0; // previous pressure error
   float prevTime = 0;     // previous time
