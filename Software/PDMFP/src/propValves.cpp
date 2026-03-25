@@ -22,9 +22,9 @@ void setupValvePWMs() {
 }
 
 void updateValvePWMs() {
-    uint8_t dc1_pwm = (int8_t) round(system_state.DC1*256)-1; // convert 0-1 duty cycle to 0-255 for OCR2B (pin 3)
-    uint8_t dc2_pwm = (int8_t) round(system_state.DC2*256)-1; // convert 0-1 duty cycle to 0-255 for OCR2A (pin 11)
+    float dc1_pwm = (round(system_state.DC1*256)-1); // convert 0-1 duty cycle to 0-255 for OCR2B (pin 3)
+    float dc2_pwm = (round(system_state.DC2*256)-1); // convert 0-1 duty cycle to 0-255 for OCR2A (pin 11)
 
-    OCR2B = dc1_pwm;
-    OCR2A = dc2_pwm;
+    OCR2B = (uint8_t)constrain(dc1_pwm, 0, 255); // set duty cycle for pin 3
+    OCR2A = (uint8_t)constrain(dc2_pwm, 0, 255); // set duty cycle for pin 11
 }

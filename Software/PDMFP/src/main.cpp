@@ -17,11 +17,14 @@ controllerState controller_state;
 void setup() {
 
   // Setup serial communication
-  Serial.begin(115200);
+  Serial.begin(28800); //
 
   // Setup sensors
   setupPressureSensor();
   setupFlowRateSensor();
+  
+  // Setup controllers
+  setupControllers();
 
   // Setup valves
   setupValvePWMs();
@@ -34,10 +37,14 @@ void setup() {
 void loop() {
 
   // Read UI inputs
-  if (readFromUI()) {                           // check if control parameters or PID gains have been changed from UI and update ctrl_params and pid_gains accordingly
+  int msgType = readFromUI(); // check if any new messages have been received from the UI
+  system_state.uiMsg = msgType; // update system state with message type received from UI
+  if (msgType == 0x01) {                        // check if control parameters have been changed from UI
     // Update control targets
     if (ctrl_params.selection == 0) {
       // turnOffSystem();                       // to be implemented: depressurizes then closes valves and stops any control actions when UI is closed
+      system_state.Q_target = 0;
+      system_state.P_target = 0;
     }
     else if (ctrl_params.selection == 1) {
       system_state.Q_target = 0;                // reset flow rate target to 0 for pressure control mode
@@ -48,6 +55,13 @@ void loop() {
       resetTargets();                           // resets timer for stepped/sinusoidal control
     }
   }
+  else if (msgType == 0x03) {                   // check if calibrated resistance has been sent from UI
+    ctrl_params.selection = 2;                  // reset control selection to flow rate
+    ctrl_params.type = 1;                       // reset control type to constant
+    ctrl_params.param_1 = 0;                    // reset control parameters
+    ctrl_params.param_2 = 0;
+    ctrl_params.param_3 = 0;
+  }
   
 
 
@@ -56,7 +70,6 @@ void loop() {
   system_state.clock = millis() / 1000.0;       // Arduino run time
   updatePressure();                             // reads from sensor and updates system_state.P
   updateFlowRate();                             // reads from sensor and updates system_state.Q
-
 
 
   // Controllers
@@ -76,5 +89,5 @@ void loop() {
 
 
   // Send system state back to computer for monitoring
-  sendToUI();
+  sendToUI();                                  // sends current system state back to UI for monitoring
 }

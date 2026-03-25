@@ -1,7 +1,7 @@
 #include "targetGenerator.h"
 #include <Arduino.h>
 
-float start_time = 0.0;
+static float start_time = 0.0;
 float target = 0.0;
 
 void resetTargets() {   // resets timer for stepped/sinusoidal control
@@ -25,8 +25,9 @@ void updateTarget() {   // updates flowrate or pressure target based on control 
 
     // __ Type 4 - Pulsed __
     // param_1 = frequency
-    // param_2 = duty cycle
-    // param_3 = amplitude
+    // param_2 = amplitude 
+    // param_3 = duty cycle
+   
 
     // Constant target
     if (ctrl_params.type == 1) {
@@ -48,8 +49,8 @@ void updateTarget() {   // updates flowrate or pressure target based on control 
     else if (ctrl_params.type == 4) {
       float period = 1.0 / ctrl_params.param_1;
       float time_in_period = fmod(system_state.clock - start_time, period);
-      if (time_in_period < ctrl_params.param_2 * period) {
-        target = ctrl_params.param_3;
+      if (time_in_period < ctrl_params.param_3 * period) {
+        target = ctrl_params.param_2;
       } else {
         target = 0;
       }

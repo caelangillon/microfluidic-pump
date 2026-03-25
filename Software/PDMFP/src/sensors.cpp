@@ -107,6 +107,9 @@ bool updateFlowRate() {
 
   int ret;
   uint16_t raw_sensor_value;
+  int16_t signed_sensor_value;
+  
+  float scaled_sensor_value;
 
   // To perform a measurement, first send 0xF1 to switch to measurement mode,
   // then read 2 bytes + 1 CRC byte from the sensor.
@@ -126,7 +129,15 @@ bool updateFlowRate() {
       raw_sensor_value  = Wire.read() << 8; // read the MSB from the sensor
       raw_sensor_value |= Wire.read();      // read the LSB from the sensor
 
-      system_state.Q = (float) raw_sensor_value;
+      signed_sensor_value = (int16_t) raw_sensor_value;
+
+      scaled_sensor_value = (float) signed_sensor_value / 270.0; // convert raw sensor value to flow rate in microL/min using conversion factor from datasheet
+      
+      if (scaled_sensor_value > 200) {
+        system_state.Q = 0;
+      } else {
+        system_state.Q = scaled_sensor_value; // update flow rate in system state
+      }
       return true;
     }
   

@@ -1,17 +1,18 @@
 #include "controllers.h"
+#include <movingAvg.h> // library for moving average filter, used for smoothing sensor readings in FF controller
 
-// Currently, the PID outputs are just floats, but maybe we can make it double or long or anything else that might be more accurate? Could be worth trying
+float PID(float error, float prevErr, float& intErr, float P, float I, float D, float sat_min, float sat_max);
 
-float PID(float error, float prevErr, float intErr, float P, float I, float D, float sat_min, float sat_max);
+movingAvg  movmean(5); // initialize moving average filter with window size of 7 for feedforward controller
 
-const float R = 80;
-
-
+void setupControllers() {
+  movmean.begin();
+}
 
 void controlFlowRate() {    // calculates target pressure and updates system_state.P_target
 
     // Feed forward part
-    float FF_val = system_state.P + R*system_state.Q_target - R*system_state.Q;
+    float FF_val = controller_state.R*system_state.Q_target + movmean.reading(system_state.P  - controller_state.R*system_state.Q);
 
     // PID part
     float P = pid_gains.P_FR;
@@ -35,26 +36,8 @@ void controlPressure() {    // calculates valve DCs updates system_state.DC1 and
 
     float error = system_state.P_target - system_state.P; // error between target and measured pressure
 
-    if (error > 0) { // Need to increase pressure, open valve 1
-        float P = pid_gains.P_V1;
-        float I = pid_gains.I_V1;
-        float D = pid_gains.D_V1;
-        system_state.DC1 = PID(error, controller_state.prevPressErr, controller_state.int_Press, P, I, D, 0, 1);
-        system_state.DC2 = 0; // Ensure valve 2 is closed
-    }
-
-    else if (error < 0) { // Need to decrease pressure, open valve 2
-        float P = pid_gains.P_V2;
-        float I = pid_gains.I_V2;
-        float D = pid_gains.D_V2;
-        system_state.DC2 = -1 * PID(error, controller_state.prevPressErr, controller_state.int_Press, P, I, D, -1, 0); // negative output for valve 2 since we want to reduce pressure
-        system_state.DC1 = 0; // Ensure valve 1 is closed
-    }
-
-    else { // Pressure is at target, close both valves
-        system_state.DC1 = 0;
-        system_state.DC2 = 0;
-    }
+    system_state.DC1 = PID(error, controller_state.prevPressErr, controller_state.int_valv_1, pid_gains.P_V1, pid_gains.I_V1, pid_gains.D_V1, 0, 1);
+    system_state.DC2 = PID(-error, -controller_state.prevPressErr, controller_state.int_valv_2, pid_gains.P_V2, pid_gains.I_V2, pid_gains.D_V2, 0, 1);
 
     // Save history for next iteration
     controller_state.prevPressErr = error;
@@ -64,13 +47,13 @@ void controlPressure() {    // calculates valve DCs updates system_state.DC1 and
 
 
 
-float PID(float error, float prevErr, float intErr, float P, float I, float D, float sat_min, float sat_max) {
+float PID(float error, float prevErr, float& intErr, float P, float I, float D, float sat_min, float sat_max) {
     
     float dt = system_state.clock - controller_state.prevTime;
     if (dt <= 0) return 0; // avoids division by zero
 
     // Integral
-    float integral = intErr + error * dt;
+    float integral = intErr + (error) * dt ; // trapezoidal integration
     // Derivative
     float derivative = (error - prevErr) / dt;
 
@@ -79,14 +62,17 @@ float PID(float error, float prevErr, float intErr, float P, float I, float D, f
     float U = P * error + I * integral + D * derivative;
 
     // Saturation and anti-windup
-    if (U > sat_max) {
+    if (U > sat_max) { // dont update integral if positively saturated to prevent windup (clamping)
         return sat_max;
     }
     else if (U < sat_min) {
+        if (integral > 0) { intErr = integral; }
+        else if (integral < 0) { intErr = 0; }
         return sat_min;
     }
     else {
-        intErr = integral; // Only update integral if not saturated to prevent windup (clamping)
+        if (integral > 0) { intErr = integral; }
+        else if (integral < 0) { intErr = 0; }
         return U;
     }
 
