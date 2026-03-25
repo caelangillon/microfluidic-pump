@@ -47,7 +47,7 @@ void controlPressure() {    // calculates valve DCs updates system_state.DC1 and
 
 
 
-float PID(float error, float prevErr, float intErr, float P, float I, float D, float sat_min, float sat_max) {
+float PID(float error, float prevErr, float& intErr, float P, float I, float D, float sat_min, float sat_max) {
     
     float dt = system_state.clock - controller_state.prevTime;
     if (dt <= 0) return 0; // avoids division by zero
