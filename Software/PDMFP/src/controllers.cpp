@@ -49,7 +49,7 @@ float PID(float error, float prevErr, float intErr, float P, float I, float D, f
     if (dt <= 0) return 0; // avoids division by zero
 
     // Integral
-    float integral = intErr + error * dt;
+    float integral = intErr + (error) * dt ; // trapezoidal integration
     // Derivative
     float derivative = (error - prevErr) / dt;
 
@@ -58,14 +58,17 @@ float PID(float error, float prevErr, float intErr, float P, float I, float D, f
     float U = P * error + I * integral + D * derivative;
 
     // Saturation and anti-windup
-    if (U > sat_max) {
+    if (U > sat_max) { // dont update integral if positively saturated to prevent windup (clamping)
         return sat_max;
     }
     else if (U < sat_min) {
+        if (integral > 0) { intErr = integral; }
+        else if (integral < 0) { intErr = 0; }
         return sat_min;
     }
     else {
-        intErr = integral; // Only update integral if not saturated to prevent windup (clamping)
+        if (integral > 0) { intErr = integral; }
+        else if (integral < 0) { intErr = 0; }
         return U;
     }
 
