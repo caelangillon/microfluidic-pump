@@ -1,14 +1,18 @@
 #include "controllers.h"
+#include <movingAvg.h> // library for moving average filter, used for smoothing sensor readings in FF controller
 
 float PID(float error, float prevErr, float& intErr, float P, float I, float D, float sat_min, float sat_max);
 
-float PID(float error, float prevErr, float intErr, float P, float I, float D, float sat_min, float sat_max);
+movingAvg  movmean(5); // initialize moving average filter with window size of 7 for feedforward controller
 
+void setupControllers() {
+  movmean.begin();
+}
 
 void controlFlowRate() {    // calculates target pressure and updates system_state.P_target
 
     // Feed forward part
-    float FF_val = system_state.P + controller_state.R*system_state.Q_target - controller_state.R*system_state.Q;
+    float FF_val = controller_state.R*system_state.Q_target + movmean.reading(system_state.P  - controller_state.R*system_state.Q);
 
     // PID part
     float P = pid_gains.P_FR;
