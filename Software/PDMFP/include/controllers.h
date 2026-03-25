@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include "sharedData.h"
 
+void setupControllers();   // initializes moving average filter for feedforward controller
 void controlFlowRate();    // calculates target pressure and updates system_state.P_target
 void controlPressure();    // calculates valve DCs updates system_state.DC1 and system_state.DC2
 
