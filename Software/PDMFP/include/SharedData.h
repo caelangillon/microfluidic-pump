@@ -48,6 +48,7 @@ struct pidGains {
 };
 
 struct systemState {
+  uint8_t uiMsg = 0x00; // message type received from UI, initialized to 0x00 for no message
   float clock = 0;      // time in seconds since system start
   float Q = 0;          // flow rate
   float Q_target = 0;   // flow rate target
@@ -64,7 +65,8 @@ struct controllerState {
   float prevPressErr = 0; // previous pressure error
   float prevTime = 0;     // previous time
   float int_FR = 0;       // integral of flow rate error
-  float int_Press = 0;    // integral of pressure error 
+  float int_valv_1 = 0;   // integral of valve 1 error
+  float int_valv_2 = 0;   // integral of valve 2 error
 };
 
 extern controlParams ctrl_params;
