@@ -1,6 +1,6 @@
 #include "controllers.h"
 
-// Currently, the PID outputs are just floats, but maybe we can make it double or long or anything else that might be more accurate? Could be worth trying
+float PID(float error, float prevErr, float& intErr, float P, float I, float D, float sat_min, float sat_max);
 
 float PID(float error, float prevErr, float intErr, float P, float I, float D, float sat_min, float sat_max);
 
@@ -32,26 +32,8 @@ void controlPressure() {    // calculates valve DCs updates system_state.DC1 and
 
     float error = system_state.P_target - system_state.P; // error between target and measured pressure
 
-    if (error > 0) { // Need to increase pressure, open valve 1
-        float P = pid_gains.P_V1;
-        float I = pid_gains.I_V1;
-        float D = pid_gains.D_V1;
-        system_state.DC1 = PID(error, controller_state.prevPressErr, controller_state.int_Press, P, I, D, 0, 1);
-        system_state.DC2 = 0; // Ensure valve 2 is closed
-    }
-
-    else if (error < 0) { // Need to decrease pressure, open valve 2
-        float P = pid_gains.P_V2;
-        float I = pid_gains.I_V2;
-        float D = pid_gains.D_V2;
-        system_state.DC2 = -1 * PID(error, controller_state.prevPressErr, controller_state.int_Press, P, I, D, -1, 0); // negative output for valve 2 since we want to reduce pressure
-        system_state.DC1 = 0; // Ensure valve 1 is closed
-    }
-
-    else { // Pressure is at target, close both valves
-        system_state.DC1 = 0;
-        system_state.DC2 = 0;
-    }
+    system_state.DC1 = PID(error, controller_state.prevPressErr, controller_state.int_valv_1, pid_gains.P_V1, pid_gains.I_V1, pid_gains.D_V1, 0, 1);
+    system_state.DC2 = PID(-error, -controller_state.prevPressErr, controller_state.int_valv_2, pid_gains.P_V2, pid_gains.I_V2, pid_gains.D_V2, 0, 1);
 
     // Save history for next iteration
     controller_state.prevPressErr = error;
