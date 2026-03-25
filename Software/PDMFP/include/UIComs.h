@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include "sharedData.h"
 
-bool readFromUI();
+uint8_t readFromUI();
 bool sendToUI();
 
 #endif // UIComs_H
