@@ -1,7 +1,7 @@
 #include "targetGenerator.h"
 #include <Arduino.h>
 
-float start_time = 0.0;
+static float start_time = 0.0;
 float target = 0.0;
 
 void resetTargets() {   // resets timer for stepped/sinusoidal control
